@@ -15,6 +15,7 @@ Then we need to check the hosts running on our IP address with another shell com
 netdiscover
 ```
 ![alt text](/screens/netdiscover.png)
+
 PCS Systemtechnik GmbH is Virtual Box Vendor so it must be our VM.
 
 
