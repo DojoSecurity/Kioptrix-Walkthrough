@@ -10,7 +10,7 @@ ifconfig
 ```
 ![alt text](/screens/ifconfig.png)
 
-Then we need to check the hosts running on our IP address with:
+Then we need to check the hosts running on our IP address with another shell command:
 ```
 netdiscover
 ```
