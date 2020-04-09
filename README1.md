@@ -63,7 +63,7 @@ Console will display the options available.
 ```
 ![alt text](/screens/root.png)
 
-Got it! 
+Got it! Root obtained!
 
 
 
