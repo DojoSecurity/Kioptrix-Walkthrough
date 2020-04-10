@@ -1,4 +1,4 @@
-# Kioptrix 1 - Walkthrought
+# Kioptrix 1 - Walkthrough
 
 ## Setting up 
 
