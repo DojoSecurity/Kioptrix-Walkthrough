@@ -70,7 +70,7 @@ After login we get redirected to a Panel which lets us Ping the machines over in
 Yes! It gives us back the output from both commands so the panel is vulnerable to Command Injection.
 As output shows we're logged in as apache, so now we need to use privilege escalation in order to get the root.
 
-## Privilege Escalation
+### Privilege Escalation
 
 Linux command uname -a (Unix name) prints back info about the name and version of operating system running on machine.
 
