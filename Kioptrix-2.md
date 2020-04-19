@@ -125,6 +125,7 @@ http://192.168.8.104:8000/9542.c
 ```
 
 Woops! **An Error gonna come up**
+
   ![alt text](/screens/wgeterror.png)
 
 Its because we dont have the required permission as the **apache** user.
