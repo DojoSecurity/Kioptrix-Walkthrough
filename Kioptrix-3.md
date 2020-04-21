@@ -27,7 +27,7 @@ I went for the Gallery and while checking "Ligoat Press Room" i noticed **Sortin
 
 ![alt text](/screens/sorting3.png)
 
-When u use it, the URL starts to use id parameter.
+When u use it, the URL starts to use **id** parameter.
 
 ![alt text](/screens/id3.png)
 
@@ -38,7 +38,7 @@ Adding singlequote sign to id parameter generates an error
 
 ![alt text](/screens/mysqlerror3.png)
 
-Application is vulnerable to **SQLi**
+Application is vulnerable to **SQLi**.
 Lets use **sqlmap** in here.
 
 ```
