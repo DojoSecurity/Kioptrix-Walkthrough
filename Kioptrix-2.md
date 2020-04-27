@@ -42,7 +42,7 @@ Lets try to bypass it with SQL Injection.
 We can guess that the query looks something like
 
 ```
-SELECT * FROM users WHERE username = <our input> AND password = <out input>
+SELECT * FROM users WHERE username = 'username' AND password = 'password'
 ```	
 
 If we pass ' or '1'='1'-- query will look now like this:
