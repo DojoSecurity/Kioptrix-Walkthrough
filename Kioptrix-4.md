@@ -1,7 +1,6 @@
 # Kioptrix #4
 
-This machine is harder than last three I solved but because of that I could learn lots of new things.
-Lets start from the beggining.
+This machine is harder than the last three but I enjoyed it a lot and surely learned some new stuff.
 
 First We check what's our ip address with simple shell command ```ifconfig```
 ![alt text](/screens/ifconfig2.png)
