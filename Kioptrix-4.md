@@ -120,7 +120,7 @@ Where:
 
 ![alt text](/screens/usermod4.png)
 
-So it should add user **John** (if u're logged as John atm) to the group with admin privileges.
+So it should add user **John** to the group with admin privileges.
 Let's check if it worked.
 
 ![alt text](/screens/root4.png)
@@ -128,6 +128,8 @@ Let's check if it worked.
 Got it!
 
 #
+Escaping the restricted shell.
+
 I had some issues that I couldn't fix when trying to access **--os-pwn** shell but I see that it worked for others.
 It's worth trying out both ways.
 
