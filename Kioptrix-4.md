@@ -43,7 +43,7 @@ Well, not really.
 Entering any random username works. Weird.. but the content of the page doesnt help us anyway.
 Let's use the SQL Injection not only to bypass the login but to get the content of the database.
 
-Using **sqlmal** on POST request requires a longer and more complicated command but it can be simplified with **Burp Suite**.
+Using **sqlmap** on POST request requires a longer and more complicated command but it can be simplified with **Burp Suite**.
 Intercept the request and save it to a file.
 Now all we need is **-r** flag and path to a file.
 ``` sqlmap -r <path to file> ```
