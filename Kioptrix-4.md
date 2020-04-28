@@ -108,14 +108,15 @@ Let's login to mysql
 
 Works well!
 
-Now let's change the privileges of the user **John** we're using.
+Now let's change the privileges of the user **John** we're using:
+
 ``` SELECT sys_exec('usermod -a -G admin john'); ```
 
 Where: 
-**sys_exec**: Returns the exit code of the external program.
-**usermod**:  Modificate the existing user.
-**-a flag**:  Assigns user to a new group
-**-G**:       Specifies a group to assign to.
+  * **sys_exec**: Returns the exit code of the external program.
+  * **usermod**:  Modificate the existing user.
+  * **-a flag**:  Assigns user to a new group
+  * **-G**:       Specifies a group to assign to.
 
 ![alt text](/screens/usermod4.png)
 
