@@ -65,9 +65,49 @@ After login through ssh we get access to a restricted shell.
 Both accounts seems to have the same privileges.
 It gives us few commands like **echo ls ll** etc. and we get kicked out if we try to use **cd** or some other forbidden signs and commands.(Warning for the first try, then kick).
 
-### Alternate way
-I struggled a lot to make something out of it but couldn't.
-I switched back to sqlmap and used the **--os-shell** and **--os-pwn** options which almost got me through but for some reason I dont know shell kept crashing.
+At this point I got stuck for quite a while. 
+I switched back to **sqlmap** and used the **--os-shell** which gave me a shell with **var/www** user and way more privileges.
+``` sqlmap -r <file with request> --os-shell ```
+
+![alt text](/screens/varwww4.png)
+ZROBIC SCREENA OSSHELL!!!
+ZROBIC SCREENA OSSHELL!!!
+ZROBIC SCREENA OSSHELL!!!
+
+With more privileged shell I noticed a **MySQL** process running with a root privileges.
+While inspecting files in the **var/www**  i found a **checklogin.php** file.
+
+![alt text](/screens/checklogin4.png)
+ZROBIC SCREENA CHECKLOGIN!!!
+ZROBIC SCREENA CHECKLOGIN!!!
+ZROBIC SCREENA CHECKLOGIN!!!
+
+It shows us the MySQL login credentials and that the password field is totally empty!
+
+I tried getting a superior shell with ``` --os-pwn ``` option in sqlmap to access the MYSQL but it crashed everytime. (read the text in the end).
+After feeling so close.. I had to go back to the restricted shell.
+
+A good hour of research paid back in Python looking command:
+
+``` echo os.shell('/bin/bash') ```
+
+![alt text](/screens/binbash4.png)
+
+It worked but I wasn't sure why.
+Credits to some fellow stackoverflow user for explaining.
+
+![alt text](/screens/explain4.png)
+
+Finally! After escaping the restricted shell I could finally get my hands on MySQL.
+
+#
+### MySQL UDF - User Defined Functions
+
+
+
+
+
+
 
 
 
