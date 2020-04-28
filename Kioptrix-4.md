@@ -90,16 +90,46 @@ A good hour of research paid back in Python looking command:
 
 It worked but I wasn't sure why.
 Credits to some fellow stackoverflow user for explaining.
-
-#
-![alt text](/screens/explain4.png)
-#
-For more info: https://www.sans.org/blog/escaping-restricted-linux-shells/
+https://unix.stackexchange.com/questions/370769/why-does-echo-os-system-bin-bash-work
+For more info on escaping restricted shells: https://www.sans.org/blog/escaping-restricted-linux-shells/
 
 Finally! After escaping the restricted shell I could finally get my hands on MySQL.
 
 #
 ### MySQL UDF - User Defined Functions
+
+MySQL has something called User Defined Functions.
+It let's MySQL execute commands on system and so if MySQL runs with root privileges.. that's the place for us.
+
+Let's login to mysql
+``` mysql -h localhost -u root -p ```
+
+![alt text](/screens/mysql4.png)
+
+Works well!
+
+Now let's change the privileges of the user **John** we're using.
+``` SELECT sys_exec('usermod -a -G admin john'); ```
+
+Where: 
+**sys_exec**: Returns the exit code of the external program.
+**usermod**:  Modificate the existing user.
+**-a flag**:  Assigns user to a new group
+**-G**:       Specifies a group to assign to.
+
+![alt text](/screens/usermod4.png)
+
+So it should add user **John** (if u're logged as John atm) to the group with admin privileges.
+Let's check if it worked.
+
+![alt text](/screens/root4.png)
+
+Got it!
+
+#
+I had some issues that I couldn't fix when trying to access **--os-pwn** shell but I see that it worked for others.
+It's worth trying out both ways.
+
 
 
 
